@@ -6,9 +6,9 @@ public class TreeSort {
         System.out.println("Изначальный массив - "+ Arrays.toString(arr));
         Tree tree = new Tree(arr[0]);
         for(int num : arr){
-            tree.insert(tree.node, num);
+            tree.add(tree.root, num);
         }
         System.out.print("Отсортированый массив - ");
-        tree.sort(tree.node);
+        tree.printNode(tree.root);
     }
 }

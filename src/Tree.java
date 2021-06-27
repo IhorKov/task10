@@ -1,28 +1,28 @@
 public class Tree {
-    Node node;
+    Node root;
 
     Tree (int value){
-        node = new Node(value);
+        root = new Node(value);
     }
 
-    public Node insert(Node node, int value) {
+    public Node add(Node node, int value) {
         if(node == null) {
             return new Node(value);
         }
         if(value < node.value) {
-            node.left = insert(node.left, value);
+            node.left = add(node.left, value);
         }
         if(value > node.value) {
-            node.right = insert(node.right, value);
+            node.right = add(node.right, value);
         }
         return node;
     }
 
-    public void sort(Node node) {
+    public void printNode(Node node) {
         if (node != null) {
-            sort(node.left);
+            printNode(node.left);
             System.out.print(node.value + " ");
-            sort(node.right);
+            printNode(node.right);
         }
     }
 }
